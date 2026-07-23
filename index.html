@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nico Salim — IT Specialist & Social Media Specialist</title>
+<meta name="description" content="Portfolio of Nico Salim, IT Specialist & Social Media Specialist. Combining technology infrastructure with digital content strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div class="glow-bg" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="nav-inner">
+    <a href="#home" class="logo">Nico S<span>.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-section="home"><span class="dot"></span>Home</a>
+      <a href="#about" class="nav-link" data-section="about"><span class="dot"></span>About</a>
+      <a href="#education" class="nav-link" data-section="education"><span class="dot"></span>Education</a>
+      <a href="#works" class="nav-link" data-section="works"><span class="dot"></span>Works</a>
+      <a href="#skills" class="nav-link" data-section="skills"><span class="dot"></span>Skills</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary nav-cta">Contact me</a>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <p class="eyebrow reveal-d1" data-reveal>Hi! I'm <strong>Nico Salim</strong> — Based in Medan, Indonesia</p>
+
+  <h1 class="hero-title reveal-d2" data-reveal>
+    IT Specialist &amp;<br>
+    <span class="typed-wrap">
+      <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
+    </span>
+  </h1>
+
+  <p class="hero-sub reveal-d3" data-reveal>Combining technology infrastructure with digital content strategies — from production servers to content that garners hundreds of thousands of views.</p>
+
+  <div class="hero-actions reveal-d4" data-reveal>
+    <a href="#works" class="btn btn-primary">View My Work</a>
+    <a href="#contact" class="btn btn-ghost">Contact Me</a>
+  </div>
+
+  <div class="hero-photo-wrap reveal-d5" data-reveal>
+    <div class="hero-spotlight" aria-hidden="true"></div>
+    <div class="hero-photo">
+      <img src="assets/pp2.png" alt="Nico Salim" class="profile-photo">
+    </div>
+    <div class="hero-photo-ghost"></div>
+
+    <a href="#about" class="explore-badge" aria-label="Explore more">
+      <svg viewBox="0 0 100 100" class="badge-ring">
+        <defs><path id="badgePath" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"/></defs>
+        <text><textPath href="#badgePath">LET'S EXPLORE • MORE •LET'S EXPLORE • MORE</textPath></text>
+      </svg>
+      <span class="badge-arrow">↓</span>
+    </a>
+  </div>
+
+  <a href="https://drive.google.com/file/d/1A_fcnoJ7okTCOG87Y_fyXTOU-azoctYC/view?usp=sharing" download class="btn btn-primary download-cv reveal-d6" data-reveal>
+    <svg viewBox="0 0 24 24" class="download-icon"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+    Download Resume
+  </a>
+</section>
+
+<!-- ================= ABOUT / GET TO KNOW ME ================= -->
+<section class="intro" id="about">
+  <p class="eyebrow center" data-reveal>Get to Know</p>
+  <h2 class="section-title" data-reveal>About <span class="accent">Me</span></h2>
+
+  <div class="intro-grid">
+    <div class="intro-card who-card" data-reveal>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </div>
+      <h3>Who am I?</h3>
+      <p>I am an IT Specialist, a Social Media Specialist &amp; a Content Creator with over two years of experience bridging the worlds of technology infrastructure and digital content production. At <strong>PT Shamrock Manufacturing Corpora</strong>, I led a technical team in installing multi-site infrastructure while maintaining system uptime above 99.9%. Simultaneously, I built a YouTube channel from scratch — producing hundreds of videos — executed a TikTok content strategy that garnered over 100,000 views, and managed paid advertising campaigns (Meta &amp; TikTok Ads) for an e-commerce brand targeting the global market. Currently, I am deepening my expertise in cloud computing and system security while remaining active in the digital content space.</p>
+
+      <div class="intro-stats">
+        <div class="stat-block">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Cups of Coffee</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Passion Level</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-side">
+      <div class="intro-card mini" data-reveal>
+        <span class="mini-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+        </span>
+        <div class="mini-text">
+          <strong>S1 Informatics Engineering</strong>
+          <em>Computer Science Graduate</em>
+        </div>
+      </div>
+
+      <div class="intro-card mini" data-reveal>
+        <span class="mini-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <div class="mini-text">
+          <strong>Universitas Prima Indonesia</strong>
+          <em>Medan, Indonesia</em>
+        </div>
+      </div>
+
+      <div class="intro-card mini" data-reveal>
+        <span class="mini-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/></svg>
+        </span>
+        <div class="mini-text">
+          <strong>Specialization</strong>
+          <em>IT &amp; Social Media Specialist</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-card contact-teaser" data-reveal>
+    <p>Since August 2023 I have been working as an IT Specialist at <strong>PT Shamrock Manufacturing Corpora</strong>, while continuing to build my content portfolio and growth marketing experience. If you have a project or job opportunity in Supervisor, IT, Web Development, or Digital Content roles, let's discuss the possibilities.</p>
+    <a href="#contact" class="btn btn-primary">Contact me <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ================= EDUCATION & ACHIEVEMENT ================= -->
+<section class="edu-achieve" id="education">
+  <h2 class="section-title" data-reveal><span class="accent">Education</span> &amp; Achievement</h2>
+  <p class="section-sub" data-reveal>My academic journey and the achievements I've gathered throughout the process of learning.</p>
+
+  <div class="tab-toggle" data-reveal>
+    <button class="tab-btn active" data-tab="education" aria-selected="true">
+      <svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+      Education
+    </button>
+    <button class="tab-btn" data-tab="achievement" aria-selected="false">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.3L18.5 21 12 16.8 5.5 21l2-7.7L2 9h7z"/></svg>
+      Achievement
+    </button>
+  </div>
+
+  <div class="tab-panels">
+    <div class="tab-panel active" data-panel="education" data-reveal>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>B.Sc. Informatics Engineering</h3>
+              <span class="timeline-date">2022 — Aug 2026</span>
+            </div>
+            <p class="timeline-org">Universitas Prima Indonesia, Medan</p>
+            <p class="timeline-desc">Focus on Information Technology Hardware &amp; Software, Systems Security, and Cloud Infrastructure.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Junior &amp; Senior High School — Science Track</h3>
+              <span class="timeline-date">2017 — 2022</span>
+            </div>
+            <p class="timeline-org">Prime One School, Medan</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Elementary School</h3>
+              <span class="timeline-date">2011 — 2017</span>
+            </div>
+            <p class="timeline-org">Methodist Galang, Galang</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-panel="achievement" data-reveal>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Microsoft Certified: Azure Data Fundamentals (DP-900)</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-org">Microsoft</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Certified Customer Feedback Management</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-org">LSP / BNSP Indonesia</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Certificate in Cryptography: Where Mathematics Serves as Cyberspace's Bodyguard</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-org">UNPRI</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Certificate of Competency: Knowledge Sharing — Cloud Computing Technology</h3>
+              <span class="timeline-date">2022</span>
+            </div>
+            <p class="timeline-org">UNPRI</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>National Webinar: Virtualization vs Cloud Computing</h3>
+              <span class="timeline-date">2024</span>
+            </div>
+            <p class="timeline-org">UNPRI</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>International Webinar: The Futures of AI — Trends and Innovation</h3>
+              <span class="timeline-date">2024</span>
+            </div>
+            <p class="timeline-org">UNPRI</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORKS ================= -->
+<section class="works" id="works">
+  <h2 class="section-title" data-reveal>View My <span class="accent">Work</span></h2>
+
+  <div class="work-carousel" data-reveal>
+    <button class="carousel-btn prev" id="prevWork" aria-label="Previous project">‹</button>
+
+    <div class="work-viewport">
+      <div class="work-track" id="workTrack">
+
+        <article class="work-card">
+          <div class="work-media work-media-video">
+            <video class="work-video" autoplay muted loop playsinline>
+              <source src="assets/content-growth.mp4" type="video/mp4">
+            </video>
+            <span class="work-tag">Content &amp; Growth</span>
+          </div>
+          <div class="work-body">
+            <span class="work-index">01</span>
+            <h3>Multi-Platform Content &amp; Growth Portfolio</h3>
+            <p>Built the "Gaming Co" YouTube channel to 278 videos with hundreds of loyal subscribers, executed a viral TikTok content strategy that surpassed 100,000+ views, and launched the global e-commerce store "MeloScalp," complete with Meta and TikTok ad campaigns targeting markets in the US, Canada, Australia, and Germany.</p>
+            <div class="work-stack">
+              <span>YouTube</span><span>TikTok Ads</span><span>Meta Ads</span><span>E-Commerce</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1HMl558cQv1Elga6U14fUU_pGixD3KObP/view?usp=sharing" download class="btn btn-primary" style="margin-top:8px;">
+              <svg viewBox="0 0 24 24" class="download-icon"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download Portfolio Ads
+            </a>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media" style="background-image:url('assets/pt-shamrock.jpeg');">
+            <span class="work-tag">IT Leader</span>
+          </div>
+          <div class="work-body">
+            <span class="work-index">02</span>
+            <h3>IT Specialist</h3>
+            <p>I work as an IT Specialist at PT Shamrock Manufacturing Corpora, where I manage multi-servers, software applications, IT consulting, cybersecurity, email servers, technical end-user support, remote control and OS updates, as well as handling hardware (PCs, laptops, printers, mobile devices, etc.) and software (MS Office, SQL, Crystal Reports, Hikvision, etc.).</p>
+            <div class="work-stack">
+              <a href="#contact" class="btn btn-ghost" style="padding:8px 20px; font-size:.82rem;">Contact me</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-media work-media-video">
+              <video class="work-video" autoplay muted loop playsinline>
+                <source src="assets/final.mp4" type="video/mp4">
+              </video>
+            <span class="work-tag">Full-Stack Web App</span>
+          </div>
+          <div class="work-body">
+            <span class="work-index">03</span>
+            <h3>ERP System — PT Salim Jaya Tbk</h3>
+            <p>An integrated ERP web app to manage the full business flow of a furniture company — Sales, Purchasing, Customs, and Warehouse divisions in one platform. Features multi-role authentication (create users and assign them to a specific division), file uploads across modules, and real-time inventory: warehouse stock automatically decreases whenever a sales order is created, powered by a Supabase database.</p>
+            <div class="work-stack">
+              <span>Supabase</span><span>Multi-Role Auth</span><span>Real-time Stock</span><span>File Upload</span>
+            </div>
+            <p style="font-size:.82rem; color:var(--muted); margin-top:2px;">Demo login — Username: <strong style="color:var(--text)">dodo</strong> · Password: <strong style="color:var(--text)">333</strong></p>
+            <a href="https://erp-flax-three.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px;">
+              <svg viewBox="0 0 24 24" class="download-icon"><path d="M14 3h7v7M21 3l-9 9M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+              Visit
+            </a>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media work-media-video">
+            <video class="work-video" autoplay muted loop playsinline>
+              <source src="assets/final nexus.mp4" type="video/mp4">
+            </video>
+            <span class="work-tag">3D / WebGL</span>
+          </div>
+          <div class="work-body">
+            <span class="work-index">04</span>
+            <h3>NEXUS — Interactive 3D Product Studio</h3>
+            <p>An immersive 3D showcase built with real-time WebGL rendering. Visitors can drag to rotate the 3D model, click the mesh to trigger expanding ripple shockwaves, switch materials on the fly (Wireframe, Holographic, Glass, Chrome), and change the lighting mood (Studio, Sunset, Night, Neon) — all rendered instantly on the GPU. Fully responsive, with touch-based drag and tap interactions on mobile.</p>
+            <div class="work-stack">
+              <span>Three.js / WebGL</span><span>Interactive 3D</span><span>Real-time Rendering</span><span>Responsive</span>
+            </div>
+            <a href="https://nexus-three-omega-76.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px;">
+              <svg viewBox="0 0 24 24" class="download-icon"><path d="M14 3h7v7M21 3l-9 9M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+              Visit
+            </a>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media work-media-contain" style="background-image:url('assets/work-in-progress.png');">
+            <span class="work-tag">Open to Work</span>
+          </div>
+          <div class="work-body">
+            <span class="work-index">05</span>
+            <h3>Coming Soon — Open to Work</h3>
+            <p>This slot is currently open. I am available for new projects or roles in supervision, IT, web development, or digital content. Let's discuss your project!</p>
+            <div class="work-stack">
+              <a href="#contact" class="btn btn-ghost" style="padding:8px 20px; font-size:.82rem;">Contact me</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <button class="carousel-btn next" id="nextWork" aria-label="Next project">›</button>
+  </div>
+
+  <div class="carousel-dots" id="workDots"></div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="skills" id="skills">
+  <h2 class="section-title" data-reveal><span class="accent">My</span> Skills</h2>
+  <p class="section-sub" data-reveal>The skills I've learned and developed over time, with focus and consistency in what I love doing.</p>
+
+  <div class="tab-toggle" data-reveal>
+    <button class="tab-btn active" data-tab="hard" aria-selected="true">Hard Skills</button>
+    <button class="tab-btn" data-tab="soft" aria-selected="false">Soft Skills</button>
+  </div>
+
+  <div class="tab-panels">
+    <div class="tab-panel active" data-panel="hard" data-reveal>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <div class="skill-head">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <h3>Hardware</h3>
+          </div>
+          <div class="skill-tags">
+            <span>PCs</span><span>Laptops</span><span>Printers</span><span>Mobile Devices</span><span>RAM Upgrade</span><span>Troubleshooting</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-head">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M6 7h.01M6 17h.01"/></svg>
+            <h3>IT Consultant</h3>
+          </div>
+          <div class="skill-tags">
+            <span>Technical End Support</span><span>Remote Access</span><span>OS Updates</span><span>Cybersecurity</span><span>Email Server</span><span>Multi-Server Management</span><span>Cloudflare & DNS Management</span><span>Web Deployment</span><span>VPS & Cloud Hosting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-section">
+        <h3 class="tech-section-title">Software &amp; Development Tools</h3>
+        <div class="tech-carousel" id="techCarousel">
+          <button class="carousel-btn prev" id="prevTech" aria-label="Previous tools">‹</button>
+          <div class="tech-viewport">
+            <div class="tech-grid" id="techTrack">
+              <div class="tech-page">
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/html5" alt="HTML5" loading="lazy"><span>HTML5</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy"><span>CSS3</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" loading="lazy"><span>JavaScript</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" loading="lazy"><span>TypeScript</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/react" alt="React JS" loading="lazy"><span>React JS</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="Next.js" loading="lazy"><span>Next.js</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" loading="lazy"><span>Node.js</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS" loading="lazy"><span>Tailwind CSS</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/firebase" alt="Firebase" loading="lazy"><span>Firebase</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/supabase" alt="Supabase" loading="lazy"><span>Supabase</span></div>
+              </div>
+              <div class="tech-page">
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/phpmyadmin" alt="phpMyAdmin" loading="lazy"><span>phpMyAdmin</span></div>
+                <div class="tech-item">
+                  <svg viewBox="0 0 24 24" class="tech-svg"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+                  <span>SQL</span>
+                </div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" loading="lazy"><span>Java</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/python" alt="Python" loading="lazy"><span>Python</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/git" alt="Git" loading="lazy"><span>Git</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" loading="lazy"><span>GitHub</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/postman" alt="Postman" loading="lazy"><span>Postman</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/figma" alt="Figma" loading="lazy"><span>Figma</span></div>
+                <div class="tech-item"><img src="assets/capcut-logo.png" alt="CapCut" loading="lazy"><span>CapCut</span></div>
+                <div class="tech-item"><img src="assets/davinci-resolve-removebg-preview.png" alt="DaVinci Resolve" loading="lazy"><span>DaVinci Resolve</span></div>
+              </div>
+              <div class="tech-page">
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" loading="lazy"><span>Canva</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Adobe Photoshop" loading="lazy"><span>Adobe Photoshop</span></div>
+                <div class="tech-item"><img src="assets/microsoft-office-removebg-preview.png" alt="MS Office" loading="lazy"><span>MS Office</span></div>
+                <div class="tech-item"><img src="assets/crystal_reports_hosting.png" alt="Crystal Reports" loading="lazy"><span>Crystal Reports</span></div>
+                <div class="tech-item"><img src="assets/hikvision-logo-removebg-preview.png" alt="Hikvision" loading="lazy"><span>Hikvision</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/laravel" alt="Laravel" loading="lazy"><span>Laravel</span></div>
+                <div class="tech-item"><img src="assets/kine-removebg-preview.png" alt="KineMaster" loading="lazy"><span>KineMaster</span></div>
+                <div class="tech-item"><img src="assets/ai tools (2).png" alt="AI Tools" loading="lazy"><span>AI Tools</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt="Vercel" loading="lazy"><span>Vercel</span></div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/linux/ffffff" alt="Linux" loading="lazy"><span>Linux</span></div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next" id="nextTech" aria-label="Next tools">›</button>
+        </div>
+        <div class="carousel-dots tech-dots" id="techDots"></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-panel="soft" data-reveal>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Time Management</span><span class="bar-percent">97%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="97"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span> Punctuality</span><span class="bar-percent">95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="95"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Analytical Thinking</span><span class="bar-percent">99%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="99"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>High Work Discipline</span><span class="bar-percent">94%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="94"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Technical Team Leadership &amp; Supervision</span><span class="bar-percent">95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="95"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Strategic Problem Solving</span><span class="bar-percent">96%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="96"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Troubleshooting</span><span class="bar-percent">92%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="92"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Professional Communication</span><span class="bar-percent">90%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="90"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Adaptability</span><span class="bar-percent">96%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="96"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Cross-functional Team Collaboration</span><span class="bar-percent">94%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="94"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <h2 class="section-title" data-reveal>Contact <span class="accent">Me</span></h2>
+
+  <div class="contact-grid" data-reveal>
+
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/nicolim1131@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New message from Portfolio">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+
+      <label class="field">
+        <span>Name</span>
+        <input type="text" name="name" placeholder="Your name" required>
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" placeholder="your@email.com" required>
+      </label>
+
+      <label class="field">
+        <span>Message</span>
+        <textarea name="message" rows="6" placeholder="Write your message here..." required></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-primary btn-block">Send Message <span class="arrow">→</span></button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+
+    <div class="contact-info">
+      <a class="info-card" href="mailto:nicolim1131@gmail.com">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </span>
+        <span>
+          <strong>Email</strong>
+          <em>nicolim1131@gmail.com</em>
+        </span>
+        <span class="info-arrow">↗</span>
+      </a>
+
+      <a class="info-card" href="tel:+6282160245563">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        </span>
+        <span>
+          <strong>Phone number</strong>
+          <em>+62 821-6024-5563</em>
+        </span>
+        <span class="info-arrow">↗</span>
+      </a>
+
+      <div class="info-card">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span>
+          <strong>Location</strong>
+          <em>Medan, Indonesia</em>
+        </span>
+        
+      </div>
+      <div class="social-links">
+        <span class="social-label">Connect with me</span>
+        <div class="social-buttons">
+          <a href="https://github.com/NicoSalim" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.5c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.53 0-.26-.01-1.13-.02-2.04-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.07 1.14a10.6 10.6 0 0 1 5.59 0c2.13-1.44 3.07-1.14 3.07-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.77 1.15 2.99 0 4.28-2.62 5.22-5.11 5.5.4.35.76 1.03.76 2.08 0 1.5-.01 2.71-.01 3.08 0 .29.2.64.77.53A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/nicosalim1" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Nico Salim.</p>
+</footer>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" aria-pressed="false">
+  <svg viewBox="0 0 24 24" class="theme-icon">
+    <circle cx="12" cy="12" r="5"/>
+    <path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
+  </svg>
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" class="scroll-top-icon">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+</button>
+
+
+<script src="script.js"></script>
+</body>
+</html>
