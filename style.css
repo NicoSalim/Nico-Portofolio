@@ -275,7 +275,7 @@ section{position:relative; padding:120px 24px; max-width:var(--maxw); margin:0 a
   display:flex; align-items:center; justify-content:center;
   animation:spin 14s linear infinite;
 }
-.explore-badge:hover{animation-play-state:paused;}
+.explore-badge:hover, .explore-badge:hover .badge-arrow{animation-play-state:paused;}
 .badge-ring text{fill:var(--text); font-size:8px; letter-spacing:1px;}
 .badge-arrow{
   position:absolute; font-size:1.1rem; color:var(--green); animation:spin 14s linear infinite reverse;
@@ -735,7 +735,14 @@ html {
   overflow-x: hidden;
 }
 
-/* Finish animations once instead of accelerating infinite loops. */
+/* Keep scroll reveals intact when component styles define their own transitions. */
+[data-reveal] {
+  transition-property: opacity, transform, background-color, border-color, color, box-shadow;
+  transition-duration: .7s, .7s, .4s, .4s, .4s, .4s;
+  transition-timing-function: ease;
+}
+
+/* Finish looping animations once; retain the requested scroll reveals. */
 @media (prefers-reduced-motion: reduce){
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -744,5 +751,13 @@ html {
     animation-delay: 0s !important;
     transition-duration: .01ms !important;
     transition-delay: 0s !important;
+  }
+  [data-reveal] {
+    transition-duration: .7s !important;
+  }
+  /* Keep the explicitly requested badge rotation at its normal speed. */
+  .explore-badge, .badge-arrow {
+    animation-duration: 14s !important;
+    animation-iteration-count: infinite !important;
   }
 }
