@@ -129,9 +129,14 @@ if(cursorGlow && !reduceMotion && (canHover || isTouch)){
     });
   }
  
-  function animateGlow(){
-    curX += (targetX - curX) * 0.12;
-    curY += (targetY - curY) * 0.12;
+  let previousGlowTime;
+  function animateGlow(timestamp){
+    // Preserve the original 60 Hz feel on high-refresh-rate displays.
+    const elapsed = previousGlowTime === undefined ? 1000 / 60 : Math.min(timestamp - previousGlowTime, 100);
+    previousGlowTime = timestamp;
+    const smoothing = 1 - Math.pow(1 - 0.12, elapsed / (1000 / 60));
+    curX += (targetX - curX) * smoothing;
+    curY += (targetY - curY) * smoothing;
     cursorGlow.style.transform = `translate3d(${curX}px, ${curY}px, 0)`;
     requestAnimationFrame(animateGlow);
   }

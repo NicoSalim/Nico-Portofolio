@@ -44,9 +44,6 @@ button{font:inherit; cursor:pointer; border:none; background:none; color:inherit
 ul,li{list-style:none;}
 section{position:relative; padding:120px 24px; max-width:var(--maxw); margin:0 auto;}
  
-@media (prefers-reduced-motion: reduce){
-  *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
-}
  
 /* ============ GLOW BACKGROUND ANIMATED ============ */
 .glow-bg{
@@ -736,4 +733,16 @@ section {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+/* Finish animations once instead of accelerating infinite loops. */
+@media (prefers-reduced-motion: reduce){
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+  }
 }
