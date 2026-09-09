@@ -16,9 +16,10 @@
 <div class="glow-bg" aria-hidden="true"></div>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <!-- ================= NAVBAR ================= -->
 <header class="navbar" id="navbar">
-  <div class="scroll-progress" id="scrollProgress"></div>
   <div class="nav-inner">
     <a href="#home" class="logo">Nico S<span>.</span></a>
 
@@ -167,15 +168,15 @@
   <div class="tab-panels">
     <div class="tab-panel active" data-panel="education" data-reveal>
       <div class="timeline">
+        <span class="timeline-flow" aria-hidden="true"></span>
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-content">
             <div class="timeline-head">
-              <h3>B.Sc. Informatics Engineering</h3>
-              <span class="timeline-date">2022 — Aug 2026</span>
+              <h3>Elementary School</h3>
+              <span class="timeline-date">2011 — 2017</span>
             </div>
-            <p class="timeline-org">Universitas Prima Indonesia, Medan</p>
-            <p class="timeline-desc">Focus on Information Technology Hardware &amp; Software, Systems Security, and Cloud Infrastructure.</p>
+            <p class="timeline-org">Methodist Galang, Galang</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -192,10 +193,11 @@
           <span class="timeline-dot"></span>
           <div class="timeline-content">
             <div class="timeline-head">
-              <h3>Elementary School</h3>
-              <span class="timeline-date">2011 — 2017</span>
+              <h3>B.Sc. Informatics Engineering</h3>
+              <span class="timeline-date">2022 — Aug 2026</span>
             </div>
-            <p class="timeline-org">Methodist Galang, Galang</p>
+            <p class="timeline-org">Universitas Prima Indonesia, Medan</p>
+            <p class="timeline-desc">Focus on Information Technology Hardware &amp; Software, Systems Security, and Cloud Infrastructure.</p>
           </div>
         </div>
       </div>
@@ -203,36 +205,7 @@
 
     <div class="tab-panel" data-panel="achievement" data-reveal>
       <div class="timeline">
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h3>Microsoft Certified: Azure Data Fundamentals (DP-900)</h3>
-              <span class="timeline-date">2026</span>
-            </div>
-            <p class="timeline-org">Microsoft</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h3>Certified Customer Feedback Management</h3>
-              <span class="timeline-date">2026</span>
-            </div>
-            <p class="timeline-org">LSP / BNSP Indonesia</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h3>Certificate in Cryptography: Where Mathematics Serves as Cyberspace's Bodyguard</h3>
-              <span class="timeline-date">2026</span>
-            </div>
-            <p class="timeline-org">UNPRI</p>
-          </div>
-        </div>
+        <span class="timeline-flow" aria-hidden="true"></span>
         <div class="timeline-item">
           <span class="timeline-dot"></span>
           <div class="timeline-content">
@@ -263,6 +236,36 @@
             <p class="timeline-org">UNPRI</p>
           </div>
         </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Microsoft Certified: Azure Data Fundamentals (DP-900)</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-org">Microsoft</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Certified Customer Feedback Management</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-org">LSP / BNSP Indonesia</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Certificate in Cryptography: Where Mathematics Serves as Cyberspace's Bodyguard</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-org">UNPRI</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -272,56 +275,63 @@
 <section class="works" id="works">
   <h2 class="section-title" data-reveal>View My <span class="accent">Work</span></h2>
 
-  <div class="work-carousel" data-reveal>
-    <button class="carousel-btn prev" id="prevWork" aria-label="Previous project">‹</button>
-
-    <div class="work-viewport">
-      <div class="work-track" id="workTrack">
-
-        <article class="work-card">
-          <div class="work-media work-media-video">
-            <video class="work-video" autoplay muted loop playsinline>
-              <source src="assets/content-growth.mp4" type="video/mp4">
+  <p class="section-sub" data-reveal>A closer look at the things I build, create, and manage. Select a project to explore.</p>
+  <div class="work-grid">
+    <article class="work-card" data-reveal>
+      <div class="work-media work-media-video">
+            <video class="work-video" muted loop playsinline preload="metadata">
+              <source src="assets/final nexus.mp4" type="video/mp4">
             </video>
-            <span class="work-tag">Content &amp; Growth</span>
+            <span class="work-tag">3D / WebGL</span>
           </div>
-          <div class="work-body">
-            <span class="work-index">01</span>
-            <h3>Multi-Platform Content &amp; Growth Portfolio</h3>
-            <p>Built the "Gaming Co" YouTube channel to 278 videos with hundreds of loyal subscribers, executed a viral TikTok content strategy that surpassed 100,000+ views, and launched the global e-commerce store "MeloScalp," complete with Meta and TikTok ad campaigns targeting markets in the US, Canada, Australia, and Germany.</p>
+      <div class="work-summary">
+        <span class="work-index">01</span>
+        <h3>NEXUS — Interactive 3D Product Studio</h3>
+        <span class="work-open-hint">View project <span aria-hidden="true">↗</span></span>
+      </div>
+      <button type="button" class="work-open" aria-label="View project: NEXUS — Interactive 3D Product Studio" aria-haspopup="dialog"></button>
+      <template class="work-detail">
+        <div class="work-media work-media-video">
+            <video class="work-video" controls playsinline preload="metadata">
+              <source src="assets/final nexus.mp4" type="video/mp4">
+            </video>
+            <span class="work-tag">3D / WebGL</span>
+          </div>
+        <div class="work-body"><span class="work-index">01</span>
+            <h3>NEXUS — Interactive 3D Product Studio</h3>
+            <p>An immersive 3D showcase built with real-time WebGL rendering. Visitors can drag to rotate the 3D model, click the mesh to trigger expanding ripple shockwaves, switch materials on the fly (Wireframe, Holographic, Glass, Chrome), and change the lighting mood (Studio, Sunset, Night, Neon) — all rendered instantly on the GPU. Fully responsive, with touch-based drag and tap interactions on mobile.</p>
             <div class="work-stack">
-              <span>YouTube</span><span>TikTok Ads</span><span>Meta Ads</span><span>E-Commerce</span>
+              <span>Three.js / WebGL</span><span>Interactive 3D</span><span>Real-time Rendering</span><span>Responsive</span>
             </div>
-            <a href="https://drive.google.com/file/d/1HMl558cQv1Elga6U14fUU_pGixD3KObP/view?usp=sharing" download class="btn btn-primary" style="margin-top:8px;">
-              <svg viewBox="0 0 24 24" class="download-icon"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              Download Portfolio Ads
+            <a href="https://nexus-three-omega-76.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px;">
+              <svg viewBox="0 0 24 24" class="download-icon"><path d="M14 3h7v7M21 3l-9 9M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+              Visit
             </a>
           </div>
-        </article>
+      </template>
+    </article>
 
-        <article class="work-card">
-          <div class="work-media" style="background-image:url('assets/pt-shamrock.jpeg');">
-            <span class="work-tag">IT Leader</span>
-          </div>
-          <div class="work-body">
-            <span class="work-index">02</span>
-            <h3>IT Specialist</h3>
-            <p>I work as an IT Specialist at PT Shamrock Manufacturing Corpora, where I manage multi-servers, software applications, IT consulting, cybersecurity, email servers, technical end-user support, remote control and OS updates, as well as handling hardware (PCs, laptops, printers, mobile devices, etc.) and software (MS Office, SQL, Crystal Reports, Hikvision, etc.).</p>
-            <div class="work-stack">
-              <a href="#contact" class="btn btn-ghost" style="padding:8px 20px; font-size:.82rem;">Contact me</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-media work-media-video">
-              <video class="work-video" autoplay muted loop playsinline>
+    <article class="work-card" data-reveal>
+      <div class="work-media work-media-video">
+              <video class="work-video" muted loop playsinline preload="metadata">
                 <source src="assets/final.mp4" type="video/mp4">
               </video>
             <span class="work-tag">Full-Stack Web App</span>
           </div>
-          <div class="work-body">
-            <span class="work-index">03</span>
+      <div class="work-summary">
+        <span class="work-index">02</span>
+        <h3>ERP System — PT Salim Jaya Tbk</h3>
+        <span class="work-open-hint">View project <span aria-hidden="true">↗</span></span>
+      </div>
+      <button type="button" class="work-open" aria-label="View project: ERP System — PT Salim Jaya Tbk" aria-haspopup="dialog"></button>
+      <template class="work-detail">
+        <div class="work-media work-media-video">
+              <video class="work-video" controls playsinline preload="metadata">
+                <source src="assets/final.mp4" type="video/mp4">
+              </video>
+            <span class="work-tag">Full-Stack Web App</span>
+          </div>
+        <div class="work-body"><span class="work-index">02</span>
             <h3>ERP System — PT Salim Jaya Tbk</h3>
             <p>An integrated ERP web app to manage the full business flow of a furniture company — Sales, Purchasing, Customs, and Warehouse divisions in one platform. Features multi-role authentication (create users and assign them to a specific division), file uploads across modules, and real-time inventory: warehouse stock automatically decreases whenever a sales order is created, powered by a Supabase database.</p>
             <div class="work-stack">
@@ -333,38 +343,30 @@
               Visit
             </a>
           </div>
-        </article>
+      </template>
+    </article>
 
-        <article class="work-card">
-          <div class="work-media work-media-video">
-            <video class="work-video" autoplay muted loop playsinline>
-              <source src="assets/final nexus.mp4" type="video/mp4">
-            </video>
-            <span class="work-tag">3D / WebGL</span>
-          </div>
-          <div class="work-body">
-            <span class="work-index">04</span>
-            <h3>NEXUS — Interactive 3D Product Studio</h3>
-            <p>An immersive 3D showcase built with real-time WebGL rendering. Visitors can drag to rotate the 3D model, click the mesh to trigger expanding ripple shockwaves, switch materials on the fly (Wireframe, Holographic, Glass, Chrome), and change the lighting mood (Studio, Sunset, Night, Neon) — all rendered instantly on the GPU. Fully responsive, with touch-based drag and tap interactions on mobile.</p>
-            <div class="work-stack">
-              <span>Three.js / WebGL</span><span>Interactive 3D</span><span>Real-time Rendering</span><span>Responsive</span>
-            </div>
-            <a href="https://nexus-three-omega-76.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px;">
-              <svg viewBox="0 0 24 24" class="download-icon"><path d="M14 3h7v7M21 3l-9 9M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
-              Visit
-            </a>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="work-media work-media-video">
-            <video class="work-video" autoplay muted loop playsinline>
+    <article class="work-card" data-reveal>
+      <div class="work-media work-media-video">
+            <video class="work-video" muted loop playsinline preload="metadata">
               <source src="assets/crrju-video.mp4" type="video/mp4">
             </video>
             <span class="work-tag">3D / WebGL</span>
           </div>
-          <div class="work-body">
-            <span class="work-index">05</span>
+      <div class="work-summary">
+        <span class="work-index">03</span>
+        <h3>CRRJU — 3D Watch</h3>
+        <span class="work-open-hint">View project <span aria-hidden="true">↗</span></span>
+      </div>
+      <button type="button" class="work-open" aria-label="View project: CRRJU — 3D Watch" aria-haspopup="dialog"></button>
+      <template class="work-detail">
+        <div class="work-media work-media-video">
+            <video class="work-video" controls playsinline preload="metadata">
+              <source src="assets/crrju-video.mp4" type="video/mp4">
+            </video>
+            <span class="work-tag">3D / WebGL</span>
+          </div>
+        <div class="work-body"><span class="work-index">03</span>
             <h3>CRRJU — 3D Watch</h3>
             <p>An immersive 3D product showcase for a luxury chronograph watch, built with Three.js and WebGL. Visitors scroll to explore the watch descending into view, rotating a full 360°, and flipping to reveal the transparent case-back — complete with Super-LumiNova night-glow lume that activates in the dark phase. Fully interactive on the product page, with drag-to-rotate viewing angles (front, side, back, tilt), auto-rotate, and a smooth transition into a limited-edition offer reveal. Fully responsive, optimized for both desktop and mobile.</p>
             <div class="work-stack">
@@ -375,29 +377,91 @@
               Visit
             </a>
           </div>
-        </article>
+      </template>
+    </article>
 
-        <article class="work-card">
-          <div class="work-media work-media-contain" style="background-image:url('assets/work-in-progress.png');">
+    <article class="work-card" data-reveal>
+      <div class="work-media work-media-video">
+            <video class="work-video" muted loop playsinline preload="metadata">
+              <source src="assets/content-growth.mp4" type="video/mp4">
+            </video>
+            <span class="work-tag">Content &amp; Growth</span>
+          </div>
+      <div class="work-summary">
+        <span class="work-index">04</span>
+        <h3>Multi-Platform Content &amp; Growth Portfolio</h3>
+        <span class="work-open-hint">View project <span aria-hidden="true">↗</span></span>
+      </div>
+      <button type="button" class="work-open" aria-label="View project: Multi-Platform Content &amp; Growth Portfolio" aria-haspopup="dialog"></button>
+      <template class="work-detail">
+        <div class="work-media work-media-video">
+            <video class="work-video" controls playsinline preload="metadata">
+              <source src="assets/content-growth.mp4" type="video/mp4">
+            </video>
+            <span class="work-tag">Content &amp; Growth</span>
+          </div>
+        <div class="work-body"><span class="work-index">04</span>
+            <h3>Multi-Platform Content &amp; Growth Portfolio</h3>
+            <p>Built the "Gaming Co" YouTube channel to 278 videos with hundreds of loyal subscribers, executed a viral TikTok content strategy that surpassed 100,000+ views, and launched the global e-commerce store "MeloScalp," complete with Meta and TikTok ad campaigns targeting markets in the US, Canada, Australia, and Germany.</p>
+            <div class="work-stack">
+              <span>YouTube</span><span>TikTok Ads</span><span>Meta Ads</span><span>E-Commerce</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1HMl558cQv1Elga6U14fUU_pGixD3KObP/view?usp=sharing" download class="btn btn-primary" style="margin-top:8px;">
+              <svg viewBox="0 0 24 24" class="download-icon"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download Portfolio Ads
+            </a>
+          </div>
+      </template>
+    </article>
+
+    <article class="work-card" data-reveal>
+      <div class="work-media" style="background-image:url('assets/pt-shamrock.jpeg');">
+            <span class="work-tag">IT Leader</span>
+          </div>
+      <div class="work-summary">
+        <span class="work-index">05</span>
+        <h3>IT Specialist</h3>
+        <span class="work-open-hint">View project <span aria-hidden="true">↗</span></span>
+      </div>
+      <button type="button" class="work-open" aria-label="View project: IT Specialist" aria-haspopup="dialog"></button>
+      <template class="work-detail">
+        <div class="work-media" style="background-image:url('assets/pt-shamrock.jpeg');">
+            <span class="work-tag">IT Leader</span>
+          </div>
+        <div class="work-body"><span class="work-index">05</span>
+            <h3>IT Specialist</h3>
+            <p>I work as an IT Specialist at PT Shamrock Manufacturing Corpora, where I manage multi-servers, software applications, IT consulting, cybersecurity, email servers, technical end-user support, remote control and OS updates, as well as handling hardware (PCs, laptops, printers, mobile devices, etc.) and software (MS Office, SQL, Crystal Reports, Hikvision, etc.).</p>
+            <div class="work-stack">
+              <a href="#contact" class="btn btn-ghost" style="padding:8px 20px; font-size:.82rem;">Contact me</a>
+            </div>
+          </div>
+      </template>
+    </article>
+
+    <article class="work-card" data-reveal>
+      <div class="work-media work-media-contain" style="background-image:url('assets/work-in-progress.png');">
             <span class="work-tag">Open to Work</span>
           </div>
-          <div class="work-body">
-            <span class="work-index">06</span>
+      <div class="work-summary">
+        <span class="work-index">06</span>
+        <h3>Coming Soon — Open to Work</h3>
+        <span class="work-open-hint">View project <span aria-hidden="true">↗</span></span>
+      </div>
+      <button type="button" class="work-open" aria-label="View project: Coming Soon — Open to Work" aria-haspopup="dialog"></button>
+      <template class="work-detail">
+        <div class="work-media work-media-contain" style="background-image:url('assets/work-in-progress.png');">
+            <span class="work-tag">Open to Work</span>
+          </div>
+        <div class="work-body"><span class="work-index">06</span>
             <h3>Coming Soon — Open to Work</h3>
             <p>This slot is currently open. I am available for new projects or roles in supervision, IT, web development, or digital content. Let's discuss your project!</p>
             <div class="work-stack">
               <a href="#contact" class="btn btn-ghost" style="padding:8px 20px; font-size:.82rem;">Contact me</a>
             </div>
           </div>
-        </article>
-
-      </div>
-    </div>
-
-    <button class="carousel-btn next" id="nextWork" aria-label="Next project">›</button>
+      </template>
+    </article>
   </div>
-
-  <div class="carousel-dots" id="workDots"></div>
 </section>
 
 <!-- ================= SKILLS ================= -->
@@ -629,6 +693,11 @@
   </button>
 </button>
 
+
+<dialog class="work-dialog" id="workDialog" aria-labelledby="workDialogTitle">
+  <button type="button" class="work-dialog-close" aria-label="Close project">×</button>
+  <div id="workDialogContent"></div>
+</dialog>
 
 <script src="script.js"></script>
 </body>

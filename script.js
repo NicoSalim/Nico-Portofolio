@@ -145,61 +145,82 @@ if(cursorGlow && !reduceMotion && (canHover || isTouch)){
   cursorGlow.remove();
 }
  
-// ============ WORK CAROUSEL ============
-const track = document.getElementById("workTrack");
-const cards = track ? Array.from(track.children) : [];
-const dotsWrap = document.getElementById("workDots");
-const prevBtn = document.getElementById("prevWork");
-const nextBtn = document.getElementById("nextWork");
-let current = 0;
- 
-if(dotsWrap){
-  cards.forEach((_, i) => {
-    const dot = document.createElement("button");
-    if(i === 0) dot.classList.add("active");
-    dot.setAttribute("aria-label", `View project ${i + 1}`);
-    dot.addEventListener("click", () => goTo(i));
-    dotsWrap.appendChild(dot);
+// ============ WORK GRID & PROJECT DIALOG ============
+const workDialog = document.getElementById("workDialog");
+const workDialogContent = document.getElementById("workDialogContent");
+const workPreviews = document.querySelectorAll(".work-grid video");
+let workOpener;
+let savedBodyOverflow;
+
+// Only play previews that are on screen; pause them while a project is open.
+const previewObserver = new IntersectionObserver(entries => {
+  entries.forEach(({ target, isIntersecting }) => {
+    target.dataset.inView = String(isIntersecting);
+    if(isIntersecting && !workDialog.open && !document.hidden){
+      target.play().catch(() => {});
+    } else {
+      target.pause();
+    }
+  });
+}, { threshold: 0.1 });
+workPreviews.forEach(video => previewObserver.observe(video));
+
+function resumeWorkPreviews(){
+  workPreviews.forEach(video => {
+    if(video.dataset.inView === "true" && !document.hidden && !workDialog.open){
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
   });
 }
-const dots = dotsWrap ? Array.from(dotsWrap.children) : [];
- 
-function goTo(index){
-  current = (index + cards.length) % cards.length;
-  track.style.transform = `translateX(-${current * 100}%)`;
-  dots.forEach((d, i) => d.classList.toggle("active", i === current));
-}
- 
-prevBtn?.addEventListener("click", () => goTo(current - 1));
-nextBtn?.addEventListener("click", () => goTo(current + 1));
- 
-const viewport = document.getElementById("workTrack")?.parentElement;
- 
-if (viewport) {
-  let touchStartX = 0;
-  let touchEndX = 0;
- 
-  viewport.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
- 
-  viewport.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
- 
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    
-    if (touchStartX - touchEndX > swipeThreshold) {
-      goTo(current + 1);
-    } 
-    else if (touchEndX - touchStartX > swipeThreshold) {
-      goTo(current - 1);
+document.addEventListener("visibilitychange", resumeWorkPreviews);
+
+document.querySelectorAll(".work-open").forEach(button => {
+  button.addEventListener("click", () => {
+    workOpener = button;
+    const template = button.parentElement.querySelector(".work-detail");
+    workDialogContent.replaceChildren(template.content.cloneNode(true));
+    workDialogContent.querySelector("h3").id = "workDialogTitle";
+    savedBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    workPreviews.forEach(video => video.pause());
+    workDialog.showModal();
+    workDialog.scrollTop = 0;
+    workDialog.querySelector(".work-dialog-close").focus({ preventScroll: true });
+    const video = workDialogContent.querySelector("video");
+    if(video){
+      video.muted = false;
+      video.play().catch(() => {});
     }
-  }
+  });
+});
+
+workDialog.querySelector(".work-dialog-close").addEventListener("click", () => workDialog.close());
+// A click on the backdrop closes the dialog; clicks inside the panel do not.
+let backdropPointerDown = false;
+function outsideWorkDialog(event){
+  const rect = workDialog.getBoundingClientRect();
+  return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
 }
- 
+workDialog.addEventListener("pointerdown", event => {
+  backdropPointerDown = event.target === workDialog && outsideWorkDialog(event);
+});
+workDialog.addEventListener("click", event => {
+  if(backdropPointerDown && event.target === workDialog && outsideWorkDialog(event)) workDialog.close();
+  backdropPointerDown = false;
+});
+workDialogContent.addEventListener("click", event => {
+  if(event.target.closest('a[href="#contact"]')) workDialog.close();
+});
+workDialog.addEventListener("close", () => {
+  workDialogContent.querySelectorAll("video").forEach(video => video.pause());
+  workDialogContent.replaceChildren();
+  document.body.style.overflow = savedBodyOverflow;
+  workOpener?.focus({ preventScroll: true });
+  resumeWorkPreviews();
+});
+
 // ============ TECH TOOLS CAROUSEL ============
 const techTrack = document.getElementById("techTrack");
 const techPages = techTrack ? Array.from(techTrack.children) : [];
@@ -299,6 +320,7 @@ document.querySelectorAll(".tab-toggle").forEach(toggle => {
         panel.classList.toggle("active", isTarget);
         if(isTarget) animateBarsIn(panel);
       });
+      scheduleScrollEffects();
     });
   });
 });
@@ -381,17 +403,62 @@ document.getElementById("year").textContent = new Date().getFullYear();
  
 // ============ SCROLL PROGRESS BAR ============
 const scrollProgress = document.getElementById("scrollProgress");
+const timelines = Array.from(document.querySelectorAll(".timeline"), element => ({
+  element,
+  items: Array.from(element.querySelectorAll(".timeline-item"))
+}));
+
+function updateTimelines(){
+  // The flowing point follows a reading line in the lower half of the viewport.
+  const readingLine = window.innerHeight * 0.65;
+  timelines.forEach(({ element, items }) => {
+    if(!element.getClientRects().length || !items.length) return;
+    const timelineTop = element.getBoundingClientRect().top;
+    // Anchor the line and moving orb to the actual card centers at every screen size.
+    const centers = items.map(item => {
+      const card = item.querySelector(".timeline-content").getBoundingClientRect();
+      return card.top + card.height / 2 - timelineTop;
+    });
+    const first = centers[0];
+    const length = centers[centers.length - 1] - first;
+    const distance = readingLine - timelineTop - first;
+    const travel = Math.max(0, Math.min(length, distance));
+    element.style.setProperty("--timeline-start", first + "px");
+    element.style.setProperty("--timeline-length", length + "px");
+    element.style.setProperty("--timeline-progress", length > 0 ? travel / length : 0);
+    element.style.setProperty("--timeline-travel", travel + "px");
+    element.style.setProperty("--timeline-started", distance >= 0 ? 1 : 0);
+    items.forEach((item, index) => {
+      // Allow for fractional layout pixels rounded by the browser's scroll position.
+      item.classList.toggle("is-reached", distance >= centers[index] - first - 1);
+    });
+  });
+}
  
 function updateScrollProgress(){
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  if(scrollProgress) scrollProgress.style.width = progress + "%";
+  const progress = docHeight > 0 ? Math.max(0, Math.min(1, scrollTop / docHeight)) : 0;
+  if(scrollProgress) scrollProgress.style.transform = `scaleX(${progress})`;
 }
- 
-window.addEventListener("scroll", updateScrollProgress, { passive: true });
-window.addEventListener("resize", updateScrollProgress);
-updateScrollProgress();
+
+let scrollEffectsFrame = 0;
+function scheduleScrollEffects(){
+  if(scrollEffectsFrame) return;
+  scrollEffectsFrame = requestAnimationFrame(() => {
+    scrollEffectsFrame = 0;
+    updateScrollProgress();
+    updateTimelines();
+  });
+}
+window.addEventListener("scroll", scheduleScrollEffects, { passive: true });
+window.addEventListener("resize", scheduleScrollEffects);
+window.addEventListener("load", scheduleScrollEffects);
+// Fonts, tab switches, and media can change page height without a scroll event.
+const scrollLayoutObserver = new ResizeObserver(scheduleScrollEffects);
+scrollLayoutObserver.observe(document.body);
+timelines.forEach(({ element }) => scrollLayoutObserver.observe(element));
+scheduleScrollEffects();
  
 // ============ SCROLL TO TOP BUTTON ============
 const scrollTopBtn = document.getElementById("scrollTop");
